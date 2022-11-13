@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média e Sitação do Aluno</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <section class= "tipo1">
+<div class="sombra">
+<article class="tipo1">
+    <h1>Média e Situação do Aluno</h1>
+</article>
+</div>
+</section>
+<section class= "tipo">
+<article class="tipo">
+    <label for="N1">Nota 1:</label>
+    <input type="text" id="N1">
+</article>
+
+<article class="tipo">
+    <label for="N2">Nota 2:</label>
+    <input type="text" id="N2">
+</article>
+
+<article class="tipo">
+    <button onclick="calcmedia()">Clique para obter o resultado</button>
+
+    <p>Média:<span id="media"></span></p>
+    <p>Situação:<span id="situacao"></span></p>
+
+</article>
+</section>
+    <script>
+
+        function calcmedia() {
+            let N1 = parseFloat(document.getElementById("N1").value);
+            let N2 = parseFloat(document.getElementById("N2").value);
+
+            let media = (N1 + N2) / 2;
+
+            let situacao = "";
+            let cor = "";
+            if (media >= 6.0) {
+                situacao = "Aprovado";
+                cor = "#00008B";
+            } else {
+                if (media <= 5.9) {
+                    situacao = "Reprovado";
+                    cor = "#8B0000";
+                }
+                
+            }
+
+            document.getElementById("media").innerHTML = media;
+            document.getElementById("situacao").innerHTML = situacao;
+            document.getElementById("situacao").style.color = cor;
+
+        }
+
+    </script>    
+</body>
+</html>
